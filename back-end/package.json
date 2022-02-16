@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "mocha src/test/unit/*.js",
+    "test": "mocha src/test/*/*.js",
     "coverage": "nyc --all npm run test"
   },
   "keywords": [],
@@ -13,8 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "eslint": "^8.9.0",
     "mocha": "^9.2.0",
+    "mongodb-memory-server": "^6.9.6",
     "nyc": "^15.1.0",
     "sinon": "^13.0.1"
   },
