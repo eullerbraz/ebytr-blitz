@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+
+import RoutesPage from './pages/RoutesPage';
 
 function App() {
   return (
     <div className="App">
-      a
+      <RoutesPage />
     </div>
   );
 }
