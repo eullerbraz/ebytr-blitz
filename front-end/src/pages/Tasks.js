@@ -5,7 +5,7 @@ import useTasks from '../hooks/useTasks';
 const Tasks = () => {
   const navigate = useNavigate();
 
-  const { tasks } = useTasks();
+  const { tasks, setTasks } = useTasks();
 
   const handleCreate = () => {
     navigate(`/create`)
@@ -13,6 +13,17 @@ const Tasks = () => {
 
   const handleEdit = (id) => {
     navigate(`/edit/${id}`)
+  }
+
+  const handleRemove = async (id) => {
+    await fetch(
+      `http://localhost:3001/task/${id}`,
+      {
+        method: 'DELETE',
+      }
+    );
+
+    setTasks(tasks.filter((task) => task._id !== id))
   }
 
   return (
@@ -34,7 +45,11 @@ const Tasks = () => {
               <td>
                 <button onClick={ () => handleEdit(_id) }>Editar</button>
               </td>
-            </tr>)
+              <td>
+                <button onClick={ () => handleRemove(_id) }>Remover</button>
+              </td>
+            </tr>,
+          )
         }
       </tbody>
       <tfoot>
