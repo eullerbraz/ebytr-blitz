@@ -28,7 +28,7 @@ const create = async (task) => {
 }
 
 const update = async (id, task) => {
-  const { error } = validateTask(task);
+  const { error } = validateTask({ ...task, createDate: new Date()});
 
   if (error) {
     const [{ message }] = error.details;
