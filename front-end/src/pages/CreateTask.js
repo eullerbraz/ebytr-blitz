@@ -16,7 +16,7 @@ const CreateTask = () => {
     })
   }
 
-  const handleClick = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const { name, status } = state;
@@ -27,7 +27,7 @@ const CreateTask = () => {
       createDate: new Date(),
     }
 
-    fetch(
+    await fetch(
       'http://localhost:3001/task',
       {
         method: 'POST',
@@ -36,13 +36,13 @@ const CreateTask = () => {
         },
         body: JSON.stringify(task),
       }
-    )
+    );
 
     navigate(`/`)
   }
 
   return (
-    <form onSubmit={ handleClick }>
+    <form onSubmit={ handleSubmit }>
       <input
         type='text'
         name='name'
@@ -57,7 +57,7 @@ const CreateTask = () => {
         <option value="Em andamento">Em andamento</option>
         <option value="Pronto">Pronto</option>
       </select>
-      <button type='submit'>Criar farefa</button>
+      <button type='submit'>Criar tarefa</button>
     </form>
   );
 }
