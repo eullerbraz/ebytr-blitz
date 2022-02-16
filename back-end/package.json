@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "test": "mocha src/test/unit/*.js",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc --all npm run test"
   },
   "keywords": [],
   "author": "",
