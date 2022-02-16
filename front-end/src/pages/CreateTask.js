@@ -41,6 +41,10 @@ const CreateTask = () => {
     navigate(`/`)
   }
 
+  const handleBack = () => {
+    navigate(`/`);
+  }
+
   return (
     <form onSubmit={ handleSubmit }>
       <input
@@ -58,6 +62,7 @@ const CreateTask = () => {
         <option value="Pronto">Pronto</option>
       </select>
       <button type='submit'>Criar tarefa</button>
+      <button type='button' onClick={ handleBack }>Voltar</button>
     </form>
   );
 }

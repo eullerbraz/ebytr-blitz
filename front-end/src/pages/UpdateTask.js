@@ -38,7 +38,7 @@ const UpdateTask = () => {
     setState({
       ...state,
       [name]: value,
-    })
+    });
   }
 
   const handleSubmit = async (event) => {
@@ -62,7 +62,11 @@ const UpdateTask = () => {
       }
     );
 
-    navigate(`/`)
+    navigate(`/`);
+  }
+
+  const handleBack = () => {
+    navigate(`/`);
   }
 
   return (
@@ -84,6 +88,7 @@ const UpdateTask = () => {
         <option value="Pronto">Pronto</option>
       </select>
       <button type='submit'>Atualizar tarefa</button>
+      <button type='button' onClick={ handleBack }>Voltar</button>
     </form>
   );
 }
