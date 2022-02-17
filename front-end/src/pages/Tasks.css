@@ -1,0 +1,29 @@
+table {
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 20px;
+  width: 70vw;
+}
+
+thead {
+  text-align: left;
+}
+
+tbody {
+  margin-top: 200px;
+}
+
+button.create {
+  background-color: chartreuse;
+  color: black;
+}
+
+button.edit {
+  background-color: royalblue;
+  color: white;
+}
+
+button.remove {
+  background-color: crimson;
+  color: white;
+}
