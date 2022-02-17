@@ -1,0 +1,17 @@
+form {
+  border: 1px solid black;
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  padding: 20px;
+}
+
+button.update {
+  background-color: chartreuse;
+  color: black;
+}
+
+button.back {
+  background-color: crimson;
+  color: white;
+}

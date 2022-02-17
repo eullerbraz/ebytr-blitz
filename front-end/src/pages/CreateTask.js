@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import './CreateTask.css';
+
 const CreateTask = () => {
   const navigate = useNavigate();
 
@@ -50,7 +52,7 @@ const CreateTask = () => {
       <input
         type='text'
         name='name'
-        placeholder='Digite um nova tarefa aqui'
+        placeholder='Digite uma nova tarefa'
         onChange={ handleChange }
       />
       <select
@@ -61,8 +63,8 @@ const CreateTask = () => {
         <option value="Em andamento">Em andamento</option>
         <option value="Pronto">Pronto</option>
       </select>
-      <button type='submit'>Criar tarefa</button>
-      <button type='button' onClick={ handleBack }>Voltar</button>
+      <button type='submit' className='add'>Criar tarefa</button>
+      <button type='button' onClick={ handleBack } className='back'>Voltar</button>
     </form>
   );
 }

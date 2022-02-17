@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import formatDate from '../helpers/formatDate';
 import useTasks from '../hooks/useTasks';
 
+import './Tasks.css';
+
 const Tasks = () => {
   const navigate = useNavigate();
 
@@ -44,10 +46,10 @@ const Tasks = () => {
               <td>{ status }</td>
               <td>{ formatDate(createDate) }</td>
               <td>
-                <button onClick={ () => handleEdit(_id) }>Editar</button>
+                <button onClick={ () => handleEdit(_id) } className='edit'>Editar</button>
               </td>
               <td>
-                <button onClick={ () => handleRemove(_id) }>Remover</button>
+                <button onClick={ () => handleRemove(_id) } className='remove'>Remover</button>
               </td>
             </tr>,
           )
@@ -56,7 +58,7 @@ const Tasks = () => {
       <tfoot>
         <tr>
           <td>
-            <button onClick={ () => handleCreate() }>Adicionar</button>
+            <button onClick={ () => handleCreate() } className='create'>ADICIONAR</button>
           </td>
         </tr>
       </tfoot>

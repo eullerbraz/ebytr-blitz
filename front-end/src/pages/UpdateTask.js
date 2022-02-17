@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import useTasks from '../hooks/useTasks';
 
+import './UpdateTask.css';
+
 const UpdateTask = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -74,7 +76,7 @@ const UpdateTask = () => {
       <input
         type='text'
         name='name'
-        placeholder='Digite um nova tarefa aqui'
+        placeholder='Digite uma nova tarefa'
         value={ state.name }
         onChange={ handleChange }
       />
@@ -87,8 +89,8 @@ const UpdateTask = () => {
         <option value="Em andamento">Em andamento</option>
         <option value="Pronto">Pronto</option>
       </select>
-      <button type='submit'>Atualizar tarefa</button>
-      <button type='button' onClick={ handleBack }>Voltar</button>
+      <button type='submit' className='update'>Atualizar tarefa</button>
+      <button type='button' onClick={ handleBack } className='back'>Voltar</button>
     </form>
   );
 }
