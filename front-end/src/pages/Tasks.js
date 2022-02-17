@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import formatDate from '../helpers/formatDate';
 import useTasks from '../hooks/useTasks';
 
 const Tasks = () => {
@@ -41,7 +42,7 @@ const Tasks = () => {
             <tr key={ _id }>
               <td>{ name }</td>
               <td>{ status }</td>
-              <td>{ createDate }</td>
+              <td>{ formatDate(createDate) }</td>
               <td>
                 <button onClick={ () => handleEdit(_id) }>Editar</button>
               </td>
